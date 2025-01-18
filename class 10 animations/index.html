@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .parant {
+        width: 80vw;
+        height: 500px;
+        background-color: black;
+      }
+      .child {
+        width: 100px;
+        height: 75px;
+        background-color: aqua;
+        /* animation-name: sunnykaanimation;
+            animation-duration: 3s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function:cubic-bezier(0.87, 0.29, 0.2, 1.2);
+            animation-direction: reverse; */
+        animation: sunnykaanimation 2s cubic-bezier(0.87, 0.29, 0.2, 1.2) 5,spin 5s linear 5;
+      }
+
+      @keyframes sunnykaanimation {
+        from {
+          background-color: red;
+        }
+        to {
+          background-color: white;
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: translateX(0px) rotate(0deg) scale(1);
+        }
+        25% {
+          transform: translateX(250px) rotate(90deg) scale(1.5) ;
+        }
+        65% {
+          transform: translateX(750px) rotate(180deg) scale(2) ;
+        }
+        100% {
+          transform:translateX(1000px) rotate(360deg) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parant">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
